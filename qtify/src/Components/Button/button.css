@@ -1,0 +1,13 @@
+.button {
+    background-color: var(--color-black);
+    color: var(--color-primary);
+    border-radius: 12px;
+    width: 170px;
+    height: 47px;
+    gap: 10px;
+    padding: 10px 16px 10px 16px;
+    border: 1px solid var(--color-primary);
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0.25px;
+}
