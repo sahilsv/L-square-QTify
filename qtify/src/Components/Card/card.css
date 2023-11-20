@@ -1,0 +1,44 @@
+.card {
+    width: 159px;
+    height: 232px;
+    background-color: var(--color-black);    
+    
+}
+
+.card-img {
+    height: 170px;
+    width: 159px;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.chip-container {
+    width: 159px;
+    height: 35px;
+    border-radius: 0px 0px 10px 10px;
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+}
+
+.chip {
+    width: 71px;
+    height: 23px !important; 
+    font-size: 10px !important; 
+    margin-left: 8px !important;
+    background-color: var(--color-black) !important;
+    color: var(--color-white) !important;
+    font-weight: 400 !important;
+    line-height: 15px !important;
+    font-family: "Poppins", sans-serif !important;
+    /* padding-right: 8px !important;
+    padding-left: 8px !important; */
+}
+
+.title {
+    height: 27px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 6px 0px 3px 1px;
+}

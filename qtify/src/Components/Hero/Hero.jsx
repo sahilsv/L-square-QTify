@@ -5,7 +5,7 @@ import headphones from "../../Assets/headphones.png";
 function Hero() {
   return (
     <div className="hero">
-      <div className="heading">
+      <div className="hero-heading">
         <h1>100 Thousand Songs, ad-free</h1>
         <h1>Over thousands podcast episodes</h1>
       </div>
