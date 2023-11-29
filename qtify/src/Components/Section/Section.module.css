@@ -1,0 +1,40 @@
+.section {
+  width: 1384px;
+  margin-left: 32px;
+  margin-bottom: 32px;
+  /* margin-right: 32px; */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  /* margin: 24px 0px 18px 0px; */
+}
+
+.albumHeading {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.toggleText {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  background-color: inherit;
+  color: var(--color-primary);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.cardWrapper {
+  margin-top: 18px;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}

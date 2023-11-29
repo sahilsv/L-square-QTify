@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import {ReactComponent as SearchIcon} from '../../Assets/SearchIcon.svg';
-import './search.css';
+import styles from './Search.module.css';
 
 const Search = () => {
   const [search, setSearch] = useState("");
@@ -16,15 +16,15 @@ const Search = () => {
 
   return (
     <>
-      <form className="wrapper" onSubmit={handleSubmit}>
+      <form className={styles.wrapper} onSubmit={handleSubmit}>
         <input
-          className="search"
+          className={styles.search}
           placeholder="Search an album of your choice"
           value={search}
           onChange={handleChange}
           required
         />
-				<button className="button-icon" type="submit">
+				<button className={styles.buttonicon} type="submit">
 					<SearchIcon />
 				</button>
       </form>

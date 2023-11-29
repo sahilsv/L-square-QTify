@@ -1,5 +1,5 @@
 .hero {
-    width: 1440px;
+    /* width: 100vw; */
     height: 270px;
     display: flex;
     justify-content: center;
@@ -7,7 +7,7 @@
     background-color: var(--color-black);
 }
 
-.hero-heading {
+.heroHeading {
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1,46 +1,47 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import "./section.css";
+import React, { useState } from "react";
+import styles from "./Section.module.css";
+import { CircularProgress } from "@mui/material";
 import Card from "../Card/Card";
+import Carousel from "../Carousel/Carousel";
 
-const Section = () => {
-  const [albums, setAlbum] = useState([]);
+const Section = ({ title, data, type }) => {
+  // const [albums, setAlbum] = useState([]);
+  const [carouselToggle, setCarouselToggle] = useState(true);
 
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const getData = async () => {
-    const response = await axios.get(
-      `https://qtify-backend-labs.crio.do/albums/top`
-    );
-    setAlbum(response.data);
-    console.log(response.data);
+  const handleToggle = () => {
+    setCarouselToggle((prevState) => !prevState);
   };
+
+  // console.log(data);
 
   return (
     <>
-      <div className="section-div">
-        <div className="section-heading">
-          {/* <span className="album-div">
-            <h3 className="album-heading">Top Albums</h3>
-          </span>
-          <span className="collapse-div">
-            <h3 className="collapse-heading">Collapse</h3>
-          </span> */}
-          <p className="album-heading">Top Albums</p>
-          <p className="collapse-heading">Collapse</p>
+      <div className={styles.section}>
+        <div className={styles.header}>
+          <h3 className={styles.albumHeading}>{title}</h3>
+          <button onClick={handleToggle} className={styles.toggleText}>
+            {!carouselToggle ? "Collapse" : "Show all"}
+          </button>
         </div>
 
-        <div className="container">
-          {albums.map((album) => {
-            return (
-              <div className="item" key={album.id}>
-                <Card album={album} />
+        {data.length === 0 ? (
+          <CircularProgress />
+        ) : (
+          <div className={styles.cardWrapper}>
+            {!carouselToggle ? (
+              <div className={styles.wrapper}>
+                {data.map((item) => (
+                  <Card data={item} type={type} />
+                ))}
               </div>
-            );
-          })}
-        </div>
+            ) : (
+              <Carousel
+                data={data}
+                renderComponent={(ele) => <Card data={ele} type={type} />}
+              />
+            )}
+          </div>
+        )}
       </div>
     </>
   );

@@ -1,15 +1,16 @@
 import React from 'react'
-import './navbar.css'
+import styles from './Navbar.module.css';
 import Logo from '../Logo/Logo'
 import Button from '../Button/Button'
 import Search from '../Search/Search'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <nav className='navbar'>
-      <a href="/">
+    <nav className={styles.navbar}>
+      <Link to="/">
         <Logo />
-      </a>
+      </Link>
       <Search />
       <Button text = "Give Feedback" />
     </nav>
