@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 // import Section from "./Components/Section/Section";
-import { fetchTopAlbums, fetchNewAlbums } from "./api/api";
+import { fetchTopAlbums, fetchNewAlbums, fetchSongs, fetchFilters } from "./api/api";
 import { Outlet } from "react-router-dom";
 
 function App() {
@@ -18,14 +18,16 @@ function App() {
   useEffect(() => {
     generateData("topAlbums", fetchTopAlbums);
     generateData("newAlbums", fetchNewAlbums);
+    generateData("songs", fetchSongs);
+    // generateData("filter", fetchFilters);
   })
 
-  const {topAlbums = [], newAlbums = []} = data;
+  const {topAlbums = [], newAlbums = [], songs = []} = data;
 
   return (
     <div className="App">
       <Navbar />
-      <Outlet context={{data: {topAlbums, newAlbums}}} />
+      <Outlet context={{data: {topAlbums, newAlbums, songs}}} />
     </div>
   );
 }
